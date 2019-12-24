@@ -1,0 +1,51 @@
+<!--
+<h1>{{getHeroe().nombre}} </h1>
+<div class="c ard mb-12" style="max-width: 100%;">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img src={{getHeroe().img}} class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <p class="card-text">{{getHeroe().bio}} </p>
+                <p class="card-text">{{getHeroe().casa}} </p>
+                <p class="card-text"><small class="text-muted">{{getHeroe().aparicion.slice(0,7)}} </small></p>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+<h1>{{getHeroe().nombre}} <small>{{getHeroe().aparicion.slice(0,7)}}</small> </h1>
+<hr>
+
+<div class="row">
+
+    <div class="col-md-4">
+
+        <img src={{getHeroe().img}} class="img-fluid" alt="">
+        <br><br>
+        <a [routerLink]="['/heroes']" class="snav-link btn btn-outline-danger btn-block">
+            Regresar
+        </a>
+
+    </div>
+
+    <div class="col-md-8">
+
+        <h3>
+            {{getHeroe().nombre}}
+        </h3>
+        <hr>
+        <p>
+            {{getHeroe().bio}}
+        </p>
+
+
+        <img *ngIf='isMarvel()' class="img-logo" src="../../../assets/img/marvel.png" alt="">
+        <img *ngIf='isDc()' class="img-logo" src="../../../assets/img/DC.png" alt="">
+
+
+    </div>
+
+</div>
