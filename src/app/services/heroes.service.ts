@@ -76,6 +76,18 @@ export class HeroesService {
         
       }
     }
+
+    buscarHeroes( termino:string):Heroe[]{
+      let conincidencias: Heroe[] = [];
+      termino = termino.toLowerCase();
+      for (let i=0; i<this.heroes.length; i++){
+        let name = this.heroes[i].nombre.toLowerCase();
+        if( name.indexOf(termino)>=0 ){
+          conincidencias.push(this.heroes[i]);
+        }        
+      }
+      return conincidencias;
+    }
 }
 
 export interface Heroe{
